@@ -38,7 +38,7 @@ public class flightest {
                 () -> assertTrue(vuelo2.addPassenger(elena), "Pasajero añadido en el vuelo"),
                 () -> assertTrue(vuelo2.addPassenger(ana), "Pasajero añadido en el vuelo"),
                 () -> assertTrue(vuelo2.removePassenger(ana), "Pasajero eliminado del vuelo"),
-                () -> assertEquals(9, vuelo2.getNumberOfPassengers(), "Quedan 9 pasajeros en el vuelo")
+                () -> assertEquals(1, vuelo2.getNumberOfPassengers(), "Quedan 1 pasajeros en el vuelo de hasta 10 personas")
         );
     }
 

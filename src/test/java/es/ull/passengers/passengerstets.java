@@ -38,13 +38,13 @@ public class passengerstets {
     @Test
     @DisplayName("Comprobando que se puede anadir pasajero al vuelo")
     public void testAnadirPasajero() {
-        Flight vuelo = new Flight("BA2490", 3);
+        Flight vuelo = new Flight("BA2490", 1);
         Flight vuelo2 = new Flight("BA2491", 0);
 
 
         assertAll("Vericar que nos ponemos unir al vuelo",
-                () -> assertEquals("BA2490", elena.getFlight().getFlightNumber(), "Configuracion correcta del vuelo y pasajero"),
-                () -> assertThrows(RuntimeException.class, () -> ana.joinFlight(vuelo2), "No se puede unir al vuelo")
+                () -> assertDoesNotThrow(()-> elena.joinFlight(vuelo), "We can join a flight"),
+                () -> assertEquals(vuelo, elena.getFlight(), "Configuracion correcta del vuelo y pasajero")
         );
     }
 
